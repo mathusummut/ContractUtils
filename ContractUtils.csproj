@@ -18,70 +18,71 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\scriptcs_bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\scriptcs_bin\ContractUtils.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\ContractUtils.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\scriptcs_bin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\scriptcs_bin\ContractUtils.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\ContractUtils.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\scriptcs_bin\Common.Logging.Core.dll</HintPath>
+      <HintPath>packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Nethereum.ABI">
-      <HintPath>..\scriptcs_bin\Nethereum.ABI.dll</HintPath>
+    <Reference Include="Nethereum.ABI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.ABI.3.1.2\lib\net451\Nethereum.ABI.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Accounts">
-      <HintPath>..\scriptcs_bin\Nethereum.Accounts.dll</HintPath>
+    <Reference Include="Nethereum.Accounts, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Accounts.3.1.2\lib\net451\Nethereum.Accounts.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Contracts">
-      <HintPath>..\scriptcs_bin\Nethereum.Contracts.dll</HintPath>
+    <Reference Include="Nethereum.Contracts, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Contracts.3.1.2\lib\net451\Nethereum.Contracts.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Geth">
-      <HintPath>..\scriptcs_bin\Nethereum.Geth.dll</HintPath>
+    <Reference Include="Nethereum.Geth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Geth.3.1.2\lib\net451\Nethereum.Geth.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Hex">
-      <HintPath>..\scriptcs_bin\Nethereum.Hex.dll</HintPath>
+    <Reference Include="Nethereum.Hex, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Hex.3.1.2\lib\net451\Nethereum.Hex.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.JsonRpc.Client">
-      <HintPath>..\scriptcs_bin\Nethereum.JsonRpc.Client.dll</HintPath>
+    <Reference Include="Nethereum.JsonRpc.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.JsonRpc.Client.3.1.2\lib\net451\Nethereum.JsonRpc.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.JsonRpc.RpcClient">
-      <HintPath>..\scriptcs_bin\Nethereum.JsonRpc.RpcClient.dll</HintPath>
+    <Reference Include="Nethereum.JsonRpc.RpcClient, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.JsonRpc.RpcClient.3.1.2\lib\net451\Nethereum.JsonRpc.RpcClient.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.KeyStore">
-      <HintPath>..\scriptcs_bin\Nethereum.KeyStore.dll</HintPath>
+    <Reference Include="Nethereum.KeyStore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.KeyStore.3.1.2\lib\net451\Nethereum.KeyStore.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.RLP">
-      <HintPath>..\scriptcs_bin\Nethereum.RLP.dll</HintPath>
+    <Reference Include="Nethereum.RLP, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.RLP.3.1.2\lib\net451\Nethereum.RLP.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.RPC">
-      <HintPath>..\scriptcs_bin\Nethereum.RPC.dll</HintPath>
+    <Reference Include="Nethereum.RPC, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.RPC.3.1.2\lib\net451\Nethereum.RPC.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Signer">
-      <HintPath>..\scriptcs_bin\Nethereum.Signer.dll</HintPath>
+    <Reference Include="Nethereum.Signer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Signer.3.1.2\lib\net451\Nethereum.Signer.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Util">
-      <HintPath>..\scriptcs_bin\Nethereum.Util.dll</HintPath>
+    <Reference Include="Nethereum.Util, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Util.3.1.2\lib\net451\Nethereum.Util.dll</HintPath>
     </Reference>
-    <Reference Include="Nethereum.Web3">
-      <HintPath>..\scriptcs_bin\Nethereum.Web3.dll</HintPath>
+    <Reference Include="Nethereum.Web3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>packages\Nethereum.Web3.3.1.2\lib\net451\Nethereum.Web3.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\scriptcs_bin\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -103,6 +104,7 @@
     <None Include="contract_defaults.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

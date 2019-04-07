@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -47,7 +48,7 @@ namespace ContractUtils {
 					try {
 						LoadConfigFromFile(Path.Combine(Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath), "contract_defaults.json"));
 					} catch {
-						Console.WriteLine("Failed to load config from contract_defaults.json");
+						Debug.WriteLine("Failed to load config from contract_defaults.json, make sure it is beside ContractUtils.dll");
 					}
 				}
 			}
@@ -58,7 +59,7 @@ namespace ContractUtils {
 		/// </summary>
 		/// <param name="path">The path to the JSON file</param>
 		public static void LoadConfigFromFile(string path) {
-			Console.WriteLine("Attempting to load config from " + path + "...");
+			Debug.WriteLine("Attempting to load config from " + path + "...");
 			string json = null;
 			try {
 				using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
@@ -69,7 +70,7 @@ namespace ContractUtils {
 			}
 			if (json == null) {
 				path = Path.Combine("scriptcs_bin", path);
-				Console.WriteLine("Attempting to load config from " + path + "...");
+				Debug.WriteLine("Attempting to load config from " + path + "...");
 				using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
 					using (StreamReader reader = new StreamReader(stream))
 						json = reader.ReadToEnd();

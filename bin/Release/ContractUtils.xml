@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ContractUtils</name>
+    </assembly>
+    <members>
+        <member name="T:ContractUtils.ConfigParams">
+            <summary>
+            Contains the assembly-wide configuration parameters specified in the accompanying config file
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ConfigParams.DefaultGas">
+            <summary>
+            The default gas value (0x6691b7)
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ConfigParams.DefaultGasPrice">
+            <summary>
+            The default gas price (0x77359400)
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ConfigParams.DefaultValue">
+            <summary>
+            The default transaction value (zero)
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ConfigParams.NodeUrl">
+            <summary>
+            The default Ethereum node url
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ConfigParams.#cctor">
+            <summary>
+            Initializes the class configuration
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ConfigParams.LoadConfigFromFile">
+            <summary>
+            Loads the default configuration from contract_defaults.json
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ConfigParams.LoadConfigFromFile(System.String)">
+            <summary>
+            Loads the default configuration from the specified JSON file
+            </summary>
+            <param name="path">The path to the JSON file</param>
+        </member>
+        <member name="M:ContractUtils.ConfigParams.LoadConfig(System.String)">
+            <summary>
+            Loads the configuration from the specified JSON object
+            </summary>
+            <param name="json">The JSON object string</param>
+        </member>
+        <member name="T:ContractUtils.ContractUtil">
+            <summary>
+            Contains useful functions to deploy and manage Ethereum contracts and function calls using Nethereum
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ContractUtil.Web3">
+            <summary>
+            The Web3 object used to interface with 
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ContractUtil.Node">
+            <summary>
+            The Ethereum node interface
+            </summary>
+        </member>
+        <member name="F:ContractUtils.ContractUtil.Convert">
+            <summary>
+            Contains conversion functions between common Ethereum units
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.#cctor">
+            <summary>
+            Initializes Web3 configuration
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetWalletAddressFromGanacheLog(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets the specified Ganache-Cli wallet address
+            </summary>
+            <param name="path">The path of the file containing the Ganache-Cli output</param>
+            <param name="walletIndex">The wallet index between 0 and 9 (the default is 0)</param>
+            <param name="timeoutSeconds">The timeout in seconds for the file to be found (default is 120)</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.UnlockWallet(ContractUtils.Wallet,System.String,System.Int32)">
+            <summary>
+            Unlocks the specified wallet using the given password
+            </summary>
+            <param name="wallet">The address of the wallet to unlock</param>
+            <param name="password">The password of the wallet</param>
+            <param name="timeoutSeconds">The operation timeout in seconds</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetReceipt(System.String,System.Int32)">
+            <summary>
+            Gets the transaction receipt from the specified transaction
+            </summary>
+            <param name="transactionHash">The hash of the transaction whose receipt to obtain</param>
+            <param name="retryCount">The maximum number of retries if an error occurs</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.DeployContract(System.String,System.String,ContractUtils.Wallet,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,System.Int32,System.Object[])">
+            <summary>
+            Deploys the specified contract into the current node specified in the config file
+            </summary>
+            <param name="abi">The JSON ABI of the contract</param>
+            <param name="byteCode">The compiled bytecode of the contract</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="gas">The gas value</param>
+            <param name="gasPrice">The gas price</param>
+            <param name="value">The initial value of the contract</param>
+            <param name="retryCount">The maximum number of retries if an error occurs</param>
+            <param name="constructorParams">The values to pass to the contract constructor</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.DeployContract(ContractUtils.CompiledContract,ContractUtils.Wallet,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,System.Int32,System.Object[])">
+            <summary>
+            Deploys the specified contract into the current node specified in the config file
+            </summary>
+            <param name="contract">The compiled contract</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="gas">The gas value</param>
+            <param name="gasPrice">The gas price</param>
+            <param name="value">The initial value of the contract</param>
+            <param name="retryCount">The maximum number of retries if an error occurs</param>
+            <param name="constructorParams">The values to pass to the contract constructor</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetCompiledContract(System.String)">
+            <summary>
+            Initalizes a compiled contract from the JSON output of the smart contract compiled by Truffle
+            </summary>
+            <param name="jsonPath">The path to the compiled JSON file</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.DeployContract(System.String,ContractUtils.Wallet,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,System.Int32,System.Object[])">
+            <summary>
+            Deploys the specified contract into the current node specified in the config file
+            </summary>
+            <param name="jsonPath">The path to the JSON ABI of the contract that is generated by Truffle</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="gas">The gas value</param>
+            <param name="gasPrice">The gas price</param>
+            <param name="value">The initial value of the contract</param>
+            <param name="retryCount">The maximum number of retries if an error occurs</param>
+            <param name="constructorParams">The values to pass to the contract constructor</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.DeployContract(System.String,ContractUtils.Wallet,System.Object[])">
+            <summary>
+            Deploys the specified contract using default values into the current node specified in the config file
+            </summary>
+            <param name="jsonPath">The path to the JSON ABI of the contract that is generated by Truffle</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="constructorParams">The values to pass to the contract constructor</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.DeployContract(ContractUtils.CompiledContract,ContractUtils.Wallet,System.Object[])">
+            <summary>
+            Deploys the specified contract using default values into the current node specified in the config file
+            </summary>
+            <param name="contract">The compiled contract</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="constructorParams">The values to pass to the contract constructor</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetContractFromAddress(ContractUtils.CompiledContract,System.String)">
+            <summary>
+            Gets the contract instance from the template ABI and the address at which it was deployed
+            </summary>
+            <param name="template">The contract template</param>
+            <param name="address">The address at which the contract was deployed</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetContractFromAddress(System.String,System.String)">
+            <summary>
+            Gets the contract instance from the ABI and the address at which it was deployed
+            </summary>
+            <param name="abi">The contract ABI</param>
+            <param name="address">The address at which the contract was deployed</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallRead``1(Nethereum.Contracts.Contract,System.String,System.Object[])">
+            <summary>
+            Calls the specified function as a read operation
+            </summary>
+            <typeparam name="T">The return type of the function</typeparam>
+            <param name="contract">The contract instance on which to invoke the function</param>
+            <param name="functionName">The name of the function to invoke</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallRead``1(Nethereum.Contracts.Function,System.Object[])">
+            <summary>
+            Calls the specified function as a read operation
+            </summary>
+            <typeparam name="T">The return type of the function</typeparam>
+            <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallWrite(Nethereum.Contracts.Contract,System.String,ContractUtils.Wallet,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,System.Object[])">
+            <summary>
+            Calls the specified function as a write operation
+            </summary>
+            <param name="contract">The contract instance on which to invoke the function</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="gas">The gas value</param>
+            <param name="gasPrice">The gas price</param>
+            <param name="value">The initial value of the contract</param>
+            <param name="functionName">The name of the function to invoke</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallWrite(Nethereum.Contracts.Function,ContractUtils.Wallet,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,Nethereum.Hex.HexTypes.HexBigInteger,System.Object[])">
+            <summary>
+            Calls the specified function as a read operation
+            </summary>
+            <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="gas">The gas value</param>
+            <param name="gasPrice">The gas price</param>
+            <param name="value">The initial value of the contract</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallWrite(Nethereum.Contracts.Contract,System.String,ContractUtils.Wallet,System.Object[])">
+            <summary>
+            Calls the specified function as a write operation using default config
+            </summary>
+            <param name="contract">The contract instance on which to invoke the function</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="functionName">The name of the function to invoke</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.CallWrite(Nethereum.Contracts.Function,ContractUtils.Wallet,System.Object[])">
+            <summary>
+            Calls the specified function as a read operation using default config
+            </summary>
+            <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+            <param name="wallet">The wallet address of the contract owner</param>
+            <param name="functionParams">The parameters to pass to the function</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetBalance(Nethereum.Contracts.Contract)">
+            <summary>
+            Gets the balance of the specified contract
+            </summary>
+            <param name="contract">The contract whose balance to obtain</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.GetBalance(System.String)">
+            <summary>
+            Gets the balance of the specified wallet or contract address
+            </summary>
+            <param name="address">The address of the wallet or contract</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.StartMining">
+            <summary>
+            Sends a signal to the associated node to start mining
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.StopMining">
+            <summary>
+            Sends a signal to the associated node to stop mining
+            </summary>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.Await(System.Threading.Tasks.Task)">
+            <summary>
+            Should only be used for live demo scripting purposes
+            Waits for a task to finish
+            </summary>
+            <param name="task">The task to await</param>
+        </member>
+        <member name="M:ContractUtils.ContractUtil.Await``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Should only be used for live demo scripting purposes.
+            Waits for a task to finish and returns the result
+            </summary>
+            <param name="task">The task to await</param>
+        </member>
+        <member name="T:ContractUtils.CompiledContract">
+            <summary>
+            Holds the data that defines a compiled contract
+            </summary>
+        </member>
+        <member name="P:ContractUtils.CompiledContract.Abi">
+            <summary>
+            The ABI of the contract
+            </summary>
+        </member>
+        <member name="P:ContractUtils.CompiledContract.ByteCode">
+            <summary>
+            The compiled bytecode of the contract
+            </summary>
+        </member>
+        <member name="M:ContractUtils.CompiledContract.#ctor(System.String,System.String)">
+            <summary>
+            Initalizes a new compiled contract
+            </summary>
+            <param name="abi">The ABI of the contract</param>
+            <param name="bytecode">The compiled bytecode of the contract</param>
+        </member>
+        <member name="T:ContractUtils.DeployedContract">
+            <summary>
+            Represents a deployed contract
+            </summary>
+        </member>
+        <member name="P:ContractUtils.DeployedContract.Contract">
+            <summary>
+            The contract object that can be interacted with
+            </summary>
+        </member>
+        <member name="P:ContractUtils.DeployedContract.Receipt">
+            <summary>
+            The transaction receipt received at the creation of the contract
+            </summary>
+        </member>
+        <member name="M:ContractUtils.DeployedContract.#ctor(Nethereum.Contracts.Contract,Nethereum.RPC.Eth.DTOs.TransactionReceipt)">
+            <summary>
+            Initializes a new deployed contract
+            </summary>
+            <param name="contract">The contract object that was created</param>
+            <param name="receipt">The transaction receipt received at the creation of the contract</param>
+        </member>
+        <member name="T:ContractUtils.Wallet">
+            <summary>
+            Represents an Ethereum wallet
+            </summary>
+        </member>
+        <member name="P:ContractUtils.Wallet.Address">
+            <summary>
+            Gets the address of the wallet
+            </summary>
+        </member>
+        <member name="P:ContractUtils.Wallet.Balance">
+            <summary>
+            Gets the balance of the current wallet
+            </summary>
+        </member>
+        <member name="M:ContractUtils.Wallet.#ctor(System.String)">
+            <summary>
+            Initializes a new wallet
+            </summary>
+            <param name="address">The address of the wallet</param>
+        </member>
+        <member name="M:ContractUtils.Wallet.Send(System.String,Nethereum.Hex.HexTypes.HexBigInteger)">
+            <summary>
+            Sends Ether from the current wallet to the specified address
+            </summary>
+            <param name="to">The target address of the Ether</param>
+            <param name="amount">The amount to send in Wei</param>
+        </member>
+        <member name="M:ContractUtils.Wallet.op_Implicit(ContractUtils.Wallet)~System.String">
+            <summary>
+            Gets the address of a wallet
+            </summary>
+            <param name="wallet">The wallet whose address to obtain</param>
+        </member>
+        <member name="M:ContractUtils.Wallet.op_Implicit(System.String)~ContractUtils.Wallet">
+            <summary>
+            Initializes a new wallet from the specified address
+            </summary>
+            <param name="address">The address of the wallet</param>
+        </member>
+        <member name="T:System.Diagnostics.ErrorDialogAction">
+            <summary>
+            Describes the error dialog behavior
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogAction.NormalUserChoice">
+            <summary>
+            The error dialog is shown and the user can choose an action to take
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogAction.ThrowRegardless">
+            <summary>
+            The error dialog is not shown and the exception is thrown instead
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogAction.SilentOperation">
+            <summary>
+            Writes the exception to console and attempts to ignore the exception
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.ErrorDialogButton">
+            <summary>
+            An enumeration of all the buttons that can be shown in the error dialog.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogButton.Ignore">
+            <summary>
+            Tries to ignore the error that happened.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogButton.Throw">
+            <summary>
+            Throws the ecxeptions that happened.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorDialogButton.Quit">
+            <summary>
+            Kills the current process immediately.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.ErrorHandler">
+            <summary>
+            A verbose error message dialog, perfect for advanced flexible exception handling.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorHandler.Logger">
+            <summary>
+            The error logger to use.
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorHandler.Behavior">
+            <summary>
+            The behavior of the error dialog
+            </summary>
+        </member>
+        <member name="F:System.Diagnostics.ErrorHandler.DefaultButtons">
+            <summary>
+            A constant for showing the default buttons.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.Show(System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ShowAsync(System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.Show(System.Diagnostics.ErrorDialogButton,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="buttons">The buttons to show.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ShowAsync(System.Diagnostics.ErrorDialogButton,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="buttons">The buttons to show.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.Show(System.String,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="message">The error message to show on top.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ShowAsync(System.String,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="message">The error message to show on top.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.Show(System.String,System.Diagnostics.ErrorDialogButton,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="message">The error message to show on top.</param>
+            <param name="buttons">The buttons to show.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ShowAsync(System.String,System.Diagnostics.ErrorDialogButton,System.Exception[])">
+            <summary>
+            Shows an error dialog handling the specified exceptions.
+            </summary>
+            <param name="message">The error message to show on top.</param>
+            <param name="buttons">The buttons to show.</param>
+            <param name="ex">An error containing the exceptions whose info to display.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.GetFirstNonNull``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets the first non-null element in the specified collection.
+            The return value is null if 'items' is null or all elements are null.
+            </summary>
+            <typeparam name="T">The type of the elements.</typeparam>
+            <param name="items"></param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ToDictionary(System.Object,System.Reflection.BindingFlags)">
+            <summary>
+            Gets a dictionary that represents the specified object (where keys represent properties).
+            </summary>
+            <param name="source">The object to serialize into a dictionary.</param>
+            <param name="bindingAttr">The attirbutes to use when searching for properties.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ToDynamic(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Creates an object with the key-value pairs found in the specified dictionary
+            </summary>
+            <param name="dict">The dictionary that contains the necessary elements</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ExceptionToDetailedString(System.String,System.Exception[])">
+            <summary>
+            Generates a helpful structured string that describes the specified exceptions
+            </summary>
+            <param name="message">A custom message that is added to the full string (can be null)</param>
+            <param name="ex">A list of the exceptions to show the details of</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.LogException(System.Exception)">
+            <summary>
+            Logs the specified exception
+            </summary>
+            <param name="ex">The exception to log.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.LogException(System.Exception,System.String)">
+            <summary>
+            Raises the LogException event.
+            </summary>
+            <param name="ex">The exception to log.</param>
+            <param name="fullMessage">The full message string to log. Call ExceptionToDetailedString() to create a properly-formatted string.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorHandler.ExtractFromException(System.Exception)">
+            <summary>
+            Extracts all inner exceptions from an exception.
+            </summary>
+            <param name="ex">The exception to extract inner exceptions from.</param>
+        </member>
+        <member name="T:System.Diagnostics.IErrorLogger">
+            <summary>
+            Represents an error logger. To use your own, implement IErrorLogger and set System.Diagnostics.ErrorHandler.Logger to a new instance of your logger
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.IErrorLogger.LogException(System.Exception,System.String)">
+            <summary>
+            Handles an exception that was thrown
+            </summary>
+            <param name="ex">The first exception that was thrown</param>
+            <param name="errorLog">A full description of the error that occurred (pre-formatted for logging)</param>
+        </member>
+        <member name="T:System.Diagnostics.ErrorLogger">
+            <summary>
+            The default error logger. To use your own, inherit this class or implement IErrorLogger and override LogException(),
+            and set System.Diagnostics.ErrorHandler.Logger to a new instance of your logger
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.ErrorLogger.MaxLogSizeKiB">
+            <summary>
+            Gets or sets the maximum log file size in kibibytes
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.ErrorLogger.LogException(System.Exception,System.String)">
+            <summary>
+            Handles an exception that was thrown
+            </summary>
+            <param name="ex">The first exception that was thrown</param>
+            <param name="errorLog">A full description of the error that occurred (pre-formatted for logging)</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorLogger.RemoveConsecutiveDuplicates(System.String,System.Char)">
+            <summary>
+            Removes consecutive duplicates of the specified character from the string.
+            </summary>
+            <param name="str">The string whose duplicate consecutive characters to remove.</param>
+            <param name="character">The character whose duplicates to remove.</param>
+        </member>
+        <member name="M:System.Diagnostics.ErrorLogger.GetFileNameWithoutExtension(System.String)">
+            <summary>
+            Returns the file name of the specified path string without the extension.
+            </summary>
+            <param name="path">The path of the file.</param>
+        </member>
+    </members>
+</doc>
