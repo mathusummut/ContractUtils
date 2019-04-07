@@ -1,6 +1,0 @@
-﻿{
-	"default_gas": "0x6691b7",
-	"default_gas_price": "0x77359400",
-	"default_value": "0x0",
-	"node_url": "http://127.0.0.1:8545"
-}
