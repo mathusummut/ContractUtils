@@ -16,4 +16,5 @@ Thumbs.db
 [Dd]esktop.ini
 *.vshost.exe
 obj/
+bin/
 .vs/
