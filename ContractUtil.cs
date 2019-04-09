@@ -1,6 +1,4 @@
-﻿using Nethereum.ABI.FunctionEncoding.Attributes;
-using Nethereum.ABI.Model;
-using Nethereum.Contracts;
+﻿using Nethereum.Contracts;
 using Nethereum.Geth;
 using Nethereum.Hex.HexTypes;
 using Nethereum.RPC.Eth.DTOs;
