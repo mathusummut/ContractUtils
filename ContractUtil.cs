@@ -181,24 +181,43 @@ namespace ContractUtils {
 			return Web3.Eth.GetContract(abi, address);
 		}
 
-		/// <summary>
-		/// Calls the specified function as a read operation
-		/// </summary>
-		/// <typeparam name="T">The return type of the function</typeparam>
-		/// <param name="contract">The contract instance on which to invoke the function</param>
-		/// <param name="functionName">The name of the function to invoke</param>
-		/// <param name="functionParams">The parameters to pass to the function</param>
-		public static Task<T> CallRead<T>(this Contract contract, string functionName, params object[] functionParams) {
+        /// <summary>
+        /// Calls the specified function as a read operation and returns a generic object
+        /// </summary>
+        /// <param name="contract">The contract instance on which to invoke the function</param>
+        /// <param name="functionName">The name of the function to invoke</param>
+        /// <param name="functionParams">The parameters to pass to the function</param>
+        public static Task<object> CallRead(this Contract contract, string functionName, params object[] functionParams) {
+            return CallRead<object>(contract, functionName, functionParams);
+        }
+
+        /// <summary>
+        /// Calls the specified function as a read operation
+        /// </summary>
+        /// <typeparam name="T">The return type of the function</typeparam>
+        /// <param name="contract">The contract instance on which to invoke the function</param>
+        /// <param name="functionName">The name of the function to invoke</param>
+        /// <param name="functionParams">The parameters to pass to the function</param>
+        public static Task<T> CallRead<T>(this Contract contract, string functionName, params object[] functionParams) {
 			return CallRead<T>(contract.GetFunction(functionName), functionParams);
 		}
 
-		/// <summary>
-		/// Calls the specified function as a read operation
-		/// </summary>
-		/// <typeparam name="T">The return type of the function</typeparam>
-		/// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
-		/// <param name="functionParams">The parameters to pass to the function</param>
-		public static Task<T> CallRead<T>(this Function function, params object[] functionParams) {
+        /// <summary>
+        /// Calls the specified function as a read operation and returns a generic object
+        /// </summary>
+        /// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+        /// <param name="functionParams">The parameters to pass to the function</param>
+        public static Task<object> CallRead(this Function function, params object[] functionParams) {
+            return CallRead<object>(function, functionParams);
+        }
+
+        /// <summary>
+        /// Calls the specified function as a read operation
+        /// </summary>
+        /// <typeparam name="T">The return type of the function</typeparam>
+        /// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+        /// <param name="functionParams">The parameters to pass to the function</param>
+        public static Task<T> CallRead<T>(this Function function, params object[] functionParams) {
 			return function.CallAsync<T>(functionParams);
 		}
 
@@ -219,7 +238,7 @@ namespace ContractUtils {
 		/// <summary>
 		/// Calls the specified function as a read operation
 		/// </summary>
-		/// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+		/// <param name="function">The instance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
 		/// <param name="wallet">The wallet address of the contract owner</param>
 		/// <param name="gas">The gas value</param>
 		/// <param name="gasPrice">The gas price</param>
@@ -243,7 +262,7 @@ namespace ContractUtils {
 		/// <summary>
 		/// Calls the specified function as a read operation using default config
 		/// </summary>
-		/// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
+		/// <param name="function">The instance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
 		/// <param name="wallet">The wallet address of the contract owner</param>
 		/// <param name="functionParams">The parameters to pass to the function</param>
 		public static Task<string> CallWrite(this Function function, Wallet wallet, params object[] functionParams) {
