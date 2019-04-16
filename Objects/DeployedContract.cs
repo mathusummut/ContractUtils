@@ -31,5 +31,13 @@ namespace ContractUtils {
 			Contract = contract;
 			Receipt = receipt;
 		}
+
+		/// <summary>
+		/// Gets the deployed contract instance
+		/// </summary>
+		/// <param name="contract">The instance whose contract to return</param>
+		public static implicit operator Contract(DeployedContract contract) {
+			return contract.Contract;
+		}
 	}
 }

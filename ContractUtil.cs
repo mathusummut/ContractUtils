@@ -89,6 +89,29 @@ namespace ContractUtils {
 			return receipt;
 		}
 
+		private static object[] PrepareParams(object[] items) {
+			if (items == null || items.Length == 0)
+				return null;
+			object[] fixedItems = new object[items.Length];
+			object current;
+			for (int i = 0; i < items.Length; i++) {
+				current = items[i];
+				if (current == null)
+					fixedItems[i] = null;
+				else if (current is Contract)
+					fixedItems[i] = ((Contract) current).Address;
+				else if (current is DeployedContract)
+					fixedItems[i] = ((DeployedContract) current).Contract.Address;
+				else if (current is Wallet)
+					fixedItems[i] = ((Wallet) current).Address;
+				else if (current is TransactionReceipt)
+					fixedItems[i] = ((TransactionReceipt) current).TransactionHash;
+				else
+					fixedItems[i] = items[i];
+			}
+			return fixedItems;
+		}
+
 		/// <summary>
 		/// Deploys the specified contract into the current node specified in the config file
 		/// </summary>
@@ -101,7 +124,7 @@ namespace ContractUtils {
 		/// <param name="retryCount">The maximum number of retries if an error occurs</param>
 		/// <param name="constructorParams">The values to pass to the contract constructor</param>
 		public static async Task<DeployedContract> DeployContract(string abi, string byteCode, Wallet wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, int retryCount = 10, params object[] constructorParams) {
-			string transactionHash = await Web3.Eth.DeployContract.SendRequestAsync(abi, byteCode, wallet.Address, gas, gasPrice, value, constructorParams);
+			string transactionHash = await Web3.Eth.DeployContract.SendRequestAsync(abi, byteCode, wallet.Address, gas, gasPrice, value, PrepareParams(constructorParams));
 			TransactionReceipt receipt = await GetReceipt(transactionHash, retryCount);
 			return new DeployedContract(Web3.Eth.GetContract(abi, receipt.ContractAddress), receipt);
 		}
@@ -218,7 +241,7 @@ namespace ContractUtils {
 		/// <param name="function">The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</param>
 		/// <param name="functionParams">The parameters to pass to the function</param>
 		public static Task<T> CallRead<T>(this Function function, params object[] functionParams) {
-			return function.CallAsync<T>(functionParams);
+			return function.CallAsync<T>(PrepareParams(functionParams));
 		}
 
 		/// <summary>
@@ -245,7 +268,7 @@ namespace ContractUtils {
 		/// <param name="value">The initial value of the contract</param>
 		/// <param name="functionParams">The parameters to pass to the function</param>
 		public static Task<string> CallWrite(this Function function, Wallet wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, params object[] functionParams) {
-			return function.SendTransactionAsync(wallet.Address, gas, gasPrice, value, functionParams);
+			return function.SendTransactionAsync(wallet.Address, gas, gasPrice, value, PrepareParams(functionParams));
 		}
 
 		/// <summary>
