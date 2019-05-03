@@ -52,7 +52,7 @@ namespace ContractUtils {
 		/// Gets the UTC timestamp of the specified DateTime
 		/// </summary>
 		/// <param name="date">The date whose timestamp to obtain</param>
-		private static long ToUtc(this DateTime date) {
+		public static long ToUtc(this DateTime date) {
 			return (long) (date - utcZero).TotalSeconds;
 		}
 
