@@ -17,6 +17,7 @@ namespace ContractUtils {
 	/// Contains useful functions to deploy and manage Ethereum contracts and function calls using Nethereum
 	/// </summary>
 	public static class ContractUtil {
+		private static DateTime utcZero = new DateTime(1970, 1, 1, 0, 0, 0);
 		/// <summary>
 		/// The Web3 object used to interface with 
 		/// </summary>
@@ -31,11 +32,28 @@ namespace ContractUtils {
 		public static UnitConversion Convert = UnitConversion.Convert;
 
 		/// <summary>
+		/// Gets the current UTC time stamp
+		/// </summary>
+		public static long Utc {
+			get {
+				return ToUtc(DateTime.UtcNow);
+			}
+		}
+
+		/// <summary>
 		/// Initializes Web3 configuration
 		/// </summary>
 		static ContractUtil() {
 			Web3.TransactionManager.DefaultGas = ConfigParams.DefaultGas;
 			Web3.TransactionManager.DefaultGasPrice = ConfigParams.DefaultGasPrice;
+		}
+
+		/// <summary>
+		/// Gets the UTC timestamp of the specified DateTime
+		/// </summary>
+		/// <param name="date">The date whose timestamp to obtain</param>
+		private static long ToUtc(this DateTime date) {
+			return (long) (date - utcZero).TotalSeconds;
 		}
 
 		/// <summary>
