@@ -12,15 +12,17 @@ namespace ContractUtils {
 	/// </summary>
 	public static class ConfigParams {
 		/// <summary>
-		/// The default gas value (0x6691b7)
+		/// The default gas value in Wei (0x6691b7)
+		/// The maximum amount of gas you are willing to spend on a particular transaction
 		/// </summary>
 		public static HexBigInteger DefaultGas = new HexBigInteger("0x6691b7");
 		/// <summary>
-		/// The default gas price (0x77359400)
+		/// The default gas price in Wei (0x77359400)
+		/// The amount of Ether you are willing to pay for every unit of gas
 		/// </summary>
 		public static HexBigInteger DefaultGasPrice = new HexBigInteger("0x77359400");
 		/// <summary>
-		/// The default transaction value (zero)
+		/// The default transaction value in Wei (zero)
 		/// </summary>
 		public static HexBigInteger DefaultValue = new HexBigInteger("0x0");
 		/// <summary>
