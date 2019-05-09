@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_contract_utils_1_1_contract_util
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_contract_utils_1_1_contract_util-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ContractUtils.ContractUtil Class Reference</div>  </div>
@@ -99,6 +100,9 @@ $(document).ready(function(){initNavTree('class_contract_utils_1_1_contract_util
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4b78a0cabad47087da4cb9cb26d9826d"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a4b78a0cabad47087da4cb9cb26d9826d">ToUtc</a> (this DateTime date)</td></tr>
+<tr class="memdesc:a4b78a0cabad47087da4cb9cb26d9826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the UTC timestamp of the specified DateTime  <a href="#a4b78a0cabad47087da4cb9cb26d9826d">More...</a><br /></td></tr>
+<tr class="separator:a4b78a0cabad47087da4cb9cb26d9826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bccabdc34ae77406b79b11ed746deb0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a1bccabdc34ae77406b79b11ed746deb0">GetWalletAddressFromGanacheLog</a> (string path, int walletIndex=0, int timeoutSeconds=120)</td></tr>
 <tr class="memdesc:a1bccabdc34ae77406b79b11ed746deb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specified Ganache-Cli wallet address  <a href="#a1bccabdc34ae77406b79b11ed746deb0">More...</a><br /></td></tr>
 <tr class="separator:a1bccabdc34ae77406b79b11ed746deb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,15 +118,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a33999dc22fa4f5dd13cc2b79dfad0f"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a8a33999dc22fa4f5dd13cc2b79dfad0f">DeployContract</a> (this <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a> contract, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, int retryCount=10, params object[] constructorParams)</td></tr>
 <tr class="memdesc:a8a33999dc22fa4f5dd13cc2b79dfad0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract into the current node specified in the config file  <a href="#a8a33999dc22fa4f5dd13cc2b79dfad0f">More...</a><br /></td></tr>
 <tr class="separator:a8a33999dc22fa4f5dd13cc2b79dfad0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a686914c5bbd51e893f195fbc489df055"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a686914c5bbd51e893f195fbc489df055">GetCompiledContract</a> (string jsonPath)</td></tr>
-<tr class="memdesc:a686914c5bbd51e893f195fbc489df055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes a compiled contract from the JSON output of the smart contract compiled by Truffle  <a href="#a686914c5bbd51e893f195fbc489df055">More...</a><br /></td></tr>
-<tr class="separator:a686914c5bbd51e893f195fbc489df055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e6060ad2a1b69fff556002a4a9007d"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ad6e6060ad2a1b69fff556002a4a9007d">DeployContract</a> (string jsonPath, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, int retryCount=10, params object[] constructorParams)</td></tr>
-<tr class="memdesc:ad6e6060ad2a1b69fff556002a4a9007d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract into the current node specified in the config file  <a href="#ad6e6060ad2a1b69fff556002a4a9007d">More...</a><br /></td></tr>
-<tr class="separator:ad6e6060ad2a1b69fff556002a4a9007d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a661da38fa93b75a5fd87abf41b745213"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a661da38fa93b75a5fd87abf41b745213">DeployContract</a> (string jsonPath, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, params object[] constructorParams)</td></tr>
-<tr class="memdesc:a661da38fa93b75a5fd87abf41b745213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract using default values into the current node specified in the config file  <a href="#a661da38fa93b75a5fd87abf41b745213">More...</a><br /></td></tr>
-<tr class="separator:a661da38fa93b75a5fd87abf41b745213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454ebd33c76711e7b6aab123dfe0870b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a454ebd33c76711e7b6aab123dfe0870b">GetCompiledContractFromFile</a> (string jsonPath)</td></tr>
+<tr class="memdesc:a454ebd33c76711e7b6aab123dfe0870b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes a compiled contract from the JSON output of the smart contract compiled by Truffle  <a href="#a454ebd33c76711e7b6aab123dfe0870b">More...</a><br /></td></tr>
+<tr class="separator:a454ebd33c76711e7b6aab123dfe0870b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f594fa5b99c32799a7c732e44de9b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ac7f594fa5b99c32799a7c732e44de9b3">GetCompiledContract</a> (string jsonString)</td></tr>
+<tr class="memdesc:ac7f594fa5b99c32799a7c732e44de9b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalizes a compiled contract from the JSON output of the smart contract compiled by Truffle  <a href="#ac7f594fa5b99c32799a7c732e44de9b3">More...</a><br /></td></tr>
+<tr class="separator:ac7f594fa5b99c32799a7c732e44de9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca88dc801b15fbab615dcd04e5074c9"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a2ca88dc801b15fbab615dcd04e5074c9">DeployContractFromFile</a> (string jsonPath, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, int retryCount=10, params object[] constructorParams)</td></tr>
+<tr class="memdesc:a2ca88dc801b15fbab615dcd04e5074c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract into the current node specified in the config file  <a href="#a2ca88dc801b15fbab615dcd04e5074c9">More...</a><br /></td></tr>
+<tr class="separator:a2ca88dc801b15fbab615dcd04e5074c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c2f57b994c2d363448029db2e954e22"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a9c2f57b994c2d363448029db2e954e22">DeployContract</a> (string jsonString, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, HexBigInteger gas, HexBigInteger gasPrice, HexBigInteger value, int retryCount=10, params object[] constructorParams)</td></tr>
+<tr class="memdesc:a9c2f57b994c2d363448029db2e954e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract into the current node specified in the config file  <a href="#a9c2f57b994c2d363448029db2e954e22">More...</a><br /></td></tr>
+<tr class="separator:a9c2f57b994c2d363448029db2e954e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab757c1d80ee6cfd36b3eac1ce3a6780b"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ab757c1d80ee6cfd36b3eac1ce3a6780b">DeployContractFromFile</a> (string jsonFile, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, params object[] constructorParams)</td></tr>
+<tr class="memdesc:ab757c1d80ee6cfd36b3eac1ce3a6780b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract using default values into the current node specified in the config file  <a href="#ab757c1d80ee6cfd36b3eac1ce3a6780b">More...</a><br /></td></tr>
+<tr class="separator:ab757c1d80ee6cfd36b3eac1ce3a6780b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73f79e0f070d9622aab5c8d10e12ba0"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ac73f79e0f070d9622aab5c8d10e12ba0">DeployContract</a> (string jsonString, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, params object[] constructorParams)</td></tr>
+<tr class="memdesc:ac73f79e0f070d9622aab5c8d10e12ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract using default values into the current node specified in the config file  <a href="#ac73f79e0f070d9622aab5c8d10e12ba0">More...</a><br /></td></tr>
+<tr class="separator:ac73f79e0f070d9622aab5c8d10e12ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfd843a8a7c31c790157c18df7ef3dc8"><td class="memItemLeft" align="right" valign="top">static Task&lt; <a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#acfd843a8a7c31c790157c18df7ef3dc8">DeployContract</a> (this <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a> contract, <a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a> wallet, params object[] constructorParams)</td></tr>
 <tr class="memdesc:acfd843a8a7c31c790157c18df7ef3dc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deploys the specified contract using default values into the current node specified in the config file  <a href="#acfd843a8a7c31c790157c18df7ef3dc8">More...</a><br /></td></tr>
 <tr class="separator:acfd843a8a7c31c790157c18df7ef3dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,9 +145,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ef1b5e0526648472d8aba19ee07bfae"><td class="memItemLeft" align="right" valign="top">static Contract&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a2ef1b5e0526648472d8aba19ee07bfae">GetContractFromAddress</a> (string abi, string address)</td></tr>
 <tr class="memdesc:a2ef1b5e0526648472d8aba19ee07bfae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the contract instance from the ABI and the address at which it was deployed  <a href="#a2ef1b5e0526648472d8aba19ee07bfae">More...</a><br /></td></tr>
 <tr class="separator:a2ef1b5e0526648472d8aba19ee07bfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06d39db02dd53b37b235686e88ad9a5c"><td class="memItemLeft" align="right" valign="top">static Task&lt; object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a06d39db02dd53b37b235686e88ad9a5c">CallRead</a> (this Contract contract, string functionName, params object[] functionParams)</td></tr>
+<tr class="memdesc:a06d39db02dd53b37b235686e88ad9a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the specified function as a read operation and returns a generic object  <a href="#a06d39db02dd53b37b235686e88ad9a5c">More...</a><br /></td></tr>
+<tr class="separator:a06d39db02dd53b37b235686e88ad9a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae50d92ad836216c528deeefc9c158844"><td class="memItemLeft" align="right" valign="top">static Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ae50d92ad836216c528deeefc9c158844">CallRead&lt; T &gt;</a> (this Contract contract, string functionName, params object[] functionParams)</td></tr>
 <tr class="memdesc:ae50d92ad836216c528deeefc9c158844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the specified function as a read operation  <a href="#ae50d92ad836216c528deeefc9c158844">More...</a><br /></td></tr>
 <tr class="separator:ae50d92ad836216c528deeefc9c158844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810ee3198c9b9efd2d2671a9da4cf061"><td class="memItemLeft" align="right" valign="top">static Task&lt; object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a810ee3198c9b9efd2d2671a9da4cf061">CallRead</a> (this Function function, params object[] functionParams)</td></tr>
+<tr class="memdesc:a810ee3198c9b9efd2d2671a9da4cf061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the specified function as a read operation and returns a generic object  <a href="#a810ee3198c9b9efd2d2671a9da4cf061">More...</a><br /></td></tr>
+<tr class="separator:a810ee3198c9b9efd2d2671a9da4cf061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0fac78d0df2f916a70bfe8808ae5ce0"><td class="memItemLeft" align="right" valign="top">static Task&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#ac0fac78d0df2f916a70bfe8808ae5ce0">CallRead&lt; T &gt;</a> (this Function function, params object[] functionParams)</td></tr>
 <tr class="memdesc:ac0fac78d0df2f916a70bfe8808ae5ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the specified function as a read operation  <a href="#ac0fac78d0df2f916a70bfe8808ae5ce0">More...</a><br /></td></tr>
 <tr class="separator:ac0fac78d0df2f916a70bfe8808ae5ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +199,12 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a3478be137ac1043209d18d3e48305bc0"><td class="memItemLeft" align="right" valign="top">static UnitConversion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a3478be137ac1043209d18d3e48305bc0">Convert</a> = UnitConversion.Convert</td></tr>
 <tr class="memdesc:a3478be137ac1043209d18d3e48305bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains conversion functions between common Ethereum units  <a href="#a3478be137ac1043209d18d3e48305bc0">More...</a><br /></td></tr>
 <tr class="separator:a3478be137ac1043209d18d3e48305bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a49ed237979244d3803f675b51e3a18bb"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_contract_utils_1_1_contract_util.html#a49ed237979244d3803f675b51e3a18bb">Utc</a><code> [get]</code></td></tr>
+<tr class="memdesc:a49ed237979244d3803f675b51e3a18bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current UTC time stamp  <a href="#a49ed237979244d3803f675b51e3a18bb">More...</a><br /></td></tr>
+<tr class="separator:a49ed237979244d3803f675b51e3a18bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains useful functions to deploy and manage Ethereum contracts and function calls using Nethereum </p>
@@ -218,7 +243,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00288">288</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00380">380</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -254,7 +279,108 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00297">297</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00389">389</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="a06d39db02dd53b37b235686e88ad9a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d39db02dd53b37b235686e88ad9a5c">&#9670;&nbsp;</a></span>CallRead() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;object&gt; ContractUtils.ContractUtil.CallRead </td>
+          <td>(</td>
+          <td class="paramtype">this Contract&#160;</td>
+          <td class="paramname"><em>contract</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>functionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>functionParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls the specified function as a read operation and returns a generic object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contract</td><td>The contract instance on which to invoke the function</td></tr>
+    <tr><td class="paramname">functionName</td><td>The name of the function to invoke</td></tr>
+    <tr><td class="paramname">functionParams</td><td>The parameters to pass to the function</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00263">263</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="a810ee3198c9b9efd2d2671a9da4cf061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a810ee3198c9b9efd2d2671a9da4cf061">&#9670;&nbsp;</a></span>CallRead() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;object&gt; ContractUtils.ContractUtil.CallRead </td>
+          <td>(</td>
+          <td class="paramtype">this Function&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>functionParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls the specified function as a read operation and returns a generic object </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</td></tr>
+    <tr><td class="paramname">functionParams</td><td>The parameters to pass to the function</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00283">283</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -268,7 +394,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Task&lt;T&gt; ContractUtils.ContractUtil.CallRead&lt; T &gt; </td>
+          <td class="memname">static Task&lt;T&gt; <a class="el" href="class_contract_utils_1_1_contract_util.html#a06d39db02dd53b37b235686e88ad9a5c">ContractUtils.ContractUtil.CallRead</a>&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">this Contract&#160;</td>
           <td class="paramname"><em>contract</em>, </td>
@@ -314,7 +440,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00191">191</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00274">274</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -328,7 +454,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Task&lt;T&gt; ContractUtils.ContractUtil.CallRead&lt; T &gt; </td>
+          <td class="memname">static Task&lt;T&gt; <a class="el" href="class_contract_utils_1_1_contract_util.html#a06d39db02dd53b37b235686e88ad9a5c">ContractUtils.ContractUtil.CallRead</a>&lt; T &gt; </td>
           <td>(</td>
           <td class="paramtype">this Function&#160;</td>
           <td class="paramname"><em>function</em>, </td>
@@ -367,7 +493,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00201">201</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00293">293</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -449,7 +575,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00215">215</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00307">307</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -514,7 +640,7 @@ Static Public Attributes</h2></td></tr>
 <p>Calls the specified function as a read operation </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">function</td><td>The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</td></tr>
+    <tr><td class="paramname">function</td><td>The instance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</td></tr>
     <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
     <tr><td class="paramname">gas</td><td>The gas value</td></tr>
     <tr><td class="paramname">gasPrice</td><td>The gas price</td></tr>
@@ -524,7 +650,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00228">228</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00320">320</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -585,7 +711,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00239">239</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00331">331</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -632,14 +758,14 @@ Static Public Attributes</h2></td></tr>
 <p>Calls the specified function as a read operation using default config </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">function</td><td>The isntance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</td></tr>
+    <tr><td class="paramname">function</td><td>The instance of the function to invoke, which is the object returned by contractInstance.GetFunction("functionName")</td></tr>
     <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
     <tr><td class="paramname">functionParams</td><td>The parameters to pass to the function</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00249">249</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00341">341</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -728,7 +854,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00103">103</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00144">144</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -810,12 +936,12 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00119">119</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00160">160</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
-<a id="ad6e6060ad2a1b69fff556002a4a9007d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6e6060ad2a1b69fff556002a4a9007d">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[3/5]</span></h2>
+<a id="a9c2f57b994c2d363448029db2e954e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2f57b994c2d363448029db2e954e22">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -825,6 +951,196 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContract </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>jsonString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a>&#160;</td>
+          <td class="paramname"><em>wallet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HexBigInteger&#160;</td>
+          <td class="paramname"><em>gas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HexBigInteger&#160;</td>
+          <td class="paramname"><em>gasPrice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HexBigInteger&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>retryCount</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>constructorParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deploys the specified contract into the current node specified in the config file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonString</td><td>The JSON ABI of the contract that is generated by Truffle</td></tr>
+    <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
+    <tr><td class="paramname">gas</td><td>The gas value</td></tr>
+    <tr><td class="paramname">gasPrice</td><td>The gas price</td></tr>
+    <tr><td class="paramname">value</td><td>The initial value of the contract</td></tr>
+    <tr><td class="paramname">retryCount</td><td>The maximum number of retries if an error occurs</td></tr>
+    <tr><td class="paramname">constructorParams</td><td>The values to pass to the contract constructor</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00205">205</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac73f79e0f070d9622aab5c8d10e12ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73f79e0f070d9622aab5c8d10e12ba0">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContract </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>jsonString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a>&#160;</td>
+          <td class="paramname"><em>wallet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>constructorParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deploys the specified contract using default values into the current node specified in the config file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonString</td><td>The JSON ABI of the contract that is generated by Truffle</td></tr>
+    <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
+    <tr><td class="paramname">constructorParams</td><td>The values to pass to the contract constructor</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00225">225</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="acfd843a8a7c31c790157c18df7ef3dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd843a8a7c31c790157c18df7ef3dc8">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContract </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a>&#160;</td>
+          <td class="paramname"><em>contract</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a>&#160;</td>
+          <td class="paramname"><em>wallet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>constructorParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deploys the specified contract using default values into the current node specified in the config file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contract</td><td>The compiled contract</td></tr>
+    <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
+    <tr><td class="paramname">constructorParams</td><td>The values to pass to the contract constructor</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00235">235</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2ca88dc801b15fbab615dcd04e5074c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca88dc801b15fbab615dcd04e5074c9">&#9670;&nbsp;</a></span>DeployContractFromFile() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContractFromFile </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>jsonPath</em>, </td>
@@ -892,12 +1208,12 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00142">142</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00191">191</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
-<a id="a661da38fa93b75a5fd87abf41b745213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a661da38fa93b75a5fd87abf41b745213">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[4/5]</span></h2>
+<a id="ab757c1d80ee6cfd36b3eac1ce3a6780b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab757c1d80ee6cfd36b3eac1ce3a6780b">&#9670;&nbsp;</a></span>DeployContractFromFile() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -906,10 +1222,10 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContract </td>
+          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContractFromFile </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>jsonPath</em>, </td>
+          <td class="paramname"><em>jsonFile</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -939,68 +1255,14 @@ Static Public Attributes</h2></td></tr>
 <p>Deploys the specified contract using default values into the current node specified in the config file </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">jsonPath</td><td>The path to the JSON ABI of the contract that is generated by Truffle</td></tr>
+    <tr><td class="paramname">jsonFile</td><td>The path to the JSON ABI of the contract that is generated by Truffle</td></tr>
     <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
     <tr><td class="paramname">constructorParams</td><td>The values to pass to the contract constructor</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00152">152</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
-
-</div>
-</div>
-<a id="acfd843a8a7c31c790157c18df7ef3dc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfd843a8a7c31c790157c18df7ef3dc8">&#9670;&nbsp;</a></span>DeployContract() <span class="overload">[5/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static Task&lt;<a class="el" href="class_contract_utils_1_1_deployed_contract.html">DeployedContract</a>&gt; ContractUtils.ContractUtil.DeployContract </td>
-          <td>(</td>
-          <td class="paramtype">this <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a>&#160;</td>
-          <td class="paramname"><em>contract</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_contract_utils_1_1_wallet.html">Wallet</a>&#160;</td>
-          <td class="paramname"><em>wallet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">params object []&#160;</td>
-          <td class="paramname"><em>constructorParams</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deploys the specified contract using default values into the current node specified in the config file </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">contract</td><td>The compiled contract</td></tr>
-    <tr><td class="paramname">wallet</td><td>The wallet address of the contract owner</td></tr>
-    <tr><td class="paramname">constructorParams</td><td>The values to pass to the contract constructor</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00162">162</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00215">215</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1298,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00257">257</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00349">349</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1072,12 +1334,12 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00265">265</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00357">357</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
-<a id="a686914c5bbd51e893f195fbc489df055"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a686914c5bbd51e893f195fbc489df055">&#9670;&nbsp;</a></span>GetCompiledContract()</h2>
+<a id="ac7f594fa5b99c32799a7c732e44de9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f594fa5b99c32799a7c732e44de9b3">&#9670;&nbsp;</a></span>GetCompiledContract()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1087,6 +1349,42 @@ Static Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">static <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a> ContractUtils.ContractUtil.GetCompiledContract </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>jsonString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initalizes a compiled contract from the JSON output of the smart contract compiled by Truffle </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonString</td><td>The string containing serialized JSON</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00176">176</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="a454ebd33c76711e7b6aab123dfe0870b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454ebd33c76711e7b6aab123dfe0870b">&#9670;&nbsp;</a></span>GetCompiledContractFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_contract_utils_1_1_compiled_contract.html">CompiledContract</a> ContractUtils.ContractUtil.GetCompiledContractFromFile </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>jsonPath</em></td><td>)</td>
@@ -1108,7 +1406,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00127">127</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00168">168</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1155,7 +1453,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00171">171</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00244">244</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1202,7 +1500,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00180">180</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00253">253</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1249,7 +1547,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00085">85</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00103">103</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1601,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00047">47</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00065">65</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1332,7 +1630,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Sends a signal to the associated node to start mining </p>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00272">272</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00364">364</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1659,43 @@ Static Public Attributes</h2></td></tr>
 
 <p>Sends a signal to the associated node to stop mining </p>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00279">279</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00371">371</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4b78a0cabad47087da4cb9cb26d9826d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b78a0cabad47087da4cb9cb26d9826d">&#9670;&nbsp;</a></span>ToUtc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long ContractUtils.ContractUtil.ToUtc </td>
+          <td>(</td>
+          <td class="paramtype">this DateTime&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the UTC timestamp of the specified DateTime </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>The date whose timestamp to obtain</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00055">55</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1415,7 +1749,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00076">76</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00094">94</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1442,7 +1776,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Contains conversion functions between common Ethereum units </p>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00031">31</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00032">32</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1468,7 +1802,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>The Ethereum node interface </p>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00027">27</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00028">28</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
@@ -1494,12 +1828,39 @@ Static Public Attributes</h2></td></tr>
 
 <p>The Web3 object used to interface with </p>
 
-<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00023">23</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00024">24</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a49ed237979244d3803f675b51e3a18bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ed237979244d3803f675b51e3a18bb">&#9670;&nbsp;</a></span>Utc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long ContractUtils.ContractUtil.Utc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current UTC time stamp </p>
+
+<p class="definition">Definition at line <a class="el" href="_contract_util_8cs_source.html#l00037">37</a> of file <a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/sammm153/Desktop/ContractUtils/<a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a></li>
+<li>C:/Users/sammm153/Desktop/GitHub/ContractUtils/<a class="el" href="_contract_util_8cs_source.html">ContractUtil.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
