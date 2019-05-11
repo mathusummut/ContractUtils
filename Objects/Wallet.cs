@@ -15,15 +15,6 @@ namespace ContractUtils {
 		}
 
 		/// <summary>
-		/// Gets the balance of the current wallet
-		/// </summary>
-		public Task<HexBigInteger> Balance {
-			get {
-				return ContractUtil.GetBalance(Address);
-			}
-		}
-
-		/// <summary>
 		/// Initializes a new wallet
 		/// </summary>
 		/// <param name="address">The address of the wallet</param>
@@ -31,6 +22,13 @@ namespace ContractUtils {
 			if (address == null)
 				address = "0x0";
 			Address = address;
+		}
+
+		/// <summary>
+		/// Gets the balance of the current wallet
+		/// </summary>
+		public Task<HexBigInteger> GetBalance() {
+			return ContractUtil.GetBalance(Address);
 		}
 
 		/// <summary>
